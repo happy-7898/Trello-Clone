@@ -75,8 +75,9 @@ A Trello-like task management application built using **React**, **React Router*
     cp .env.example .env
 4. **.env.example**
     ```
-    VITE_TOKEN=your_auth_token
+    VITE_BASE_URL=trello_base_url
     VITE_API_KEY=your_api_key
+    VITE_API_TOKEN=your_api_token
 5. **Start the development server**
     ```bash
     npm run dev
