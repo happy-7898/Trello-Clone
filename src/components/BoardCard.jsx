@@ -6,7 +6,7 @@ import Box from "@mui/joy/Box";
 
 const BoardCard = ({ board, handleNavigation }) => {
   return (
-    <Card sx={{ width: "100%" }}>
+    <Card sx={{ width: "100%",maxWidth:400,mx: "auto" }}>
       <CardActionArea onClick={() => handleNavigation(board)}>
         <Box
           height={140}

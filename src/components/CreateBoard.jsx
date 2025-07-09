@@ -73,7 +73,7 @@ const CreateBoard = () => {
   return (
     <div>
       {!isOpened && (
-        <Box sx={{ minWidth: 245 }}>
+        <Box sx={{ maxWidth: 400 }}>
           <Card variant="soft" onClick={toggleOpenForm}>
             <CardContent
               sx={{
