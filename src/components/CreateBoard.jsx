@@ -95,8 +95,8 @@ const CreateBoard = () => {
         <div className="absolute left-0 top-0 w-full pt-6 bg-gray-500/50 h-screen flex justify-center items-start">
           <div className="bg-gray-400 p-5 rounded-xl w-1/3 min-w-60 max-w-73">
             <form onSubmit={handleSubmit}>
-              <Stack spacing={2} sx={{ minWidth: 245, maxWidth: 345 }}>
-                <Input placeholder="Board Name" name="boardName" required />
+              <Stack spacing={2} >
+                <Input placeholder="Board Name" name="boardName" required  />
                 <RadioGroup
                   value={type}
                   onChange={(e) => setType(e.target.value)}
