@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import BoardCard from "./BoardCard";
 import CreateBoard from "./CreateBoard";
 import { BoardsPageContext } from "../pages/BoardsPage";
@@ -15,8 +15,9 @@ const Boards = () => {
   return (
     <div className="relative">
       <div className="grid gap-4 p-4 justify-center grid-cols-[repeat(auto-fit,_minmax(245px,_1fr))]">
-        {boards.map((board, index) => (
+        {boards.map((board) => (
           <BoardCard
+            key={board.id}
             board={board}
             handleNavigation={handleNavigation}
           />

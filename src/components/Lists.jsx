@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { ListsPageContext } from "../pages/ListsPage";
 import UnArchivedCards from "./UnArchivedCards";
 import ArchivedCards from "./ArchivedCards";

@@ -1,7 +1,7 @@
 import Loader from "../components/Loader";
 import NavBar from "../components/NavBar";
 import Boards from "../components/Boards";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { fetchBoards } from "../utils/api";
 
 const BoardsPageContext=createContext();

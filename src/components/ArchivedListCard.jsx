@@ -7,20 +7,15 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import CardHeader from "@mui/material/CardHeader";
 import UnarchiveIcon from "@mui/icons-material/Unarchive";
-import { useParams } from "react-router";
 import {
-  createCardForList,
   fetchCardsForList,
   unArchivedList,
-  fetchArchivedLists,
-  fetchLists,
 } from "../utils/api";
 import { ListsPageContext } from "../pages/ListsPage";
 
 const ArchivedListCard = ({ currCard }) => {
   const [cards, setCards] = useState();
   const { setLists, setArchivedLists,lists,archivedLists } = useContext(ListsPageContext);
-  const { id: boardId } = useParams();
 
   useEffect(() => {
     (async () => {
@@ -45,7 +40,7 @@ const ArchivedListCard = ({ currCard }) => {
 
   return (
     <div>
-      <Card sx={{ width: 345 }}>
+      <Card sx={{ width: 320 }}>
         <CardHeader
           action={
             <IconButton aria-label="Unarchive" onClick={handleArchivedCard}>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CheckListCard from "./CheckListCard";
 import { Button, Box, Input } from "@mui/material";
 import { ListsPageContext } from "../pages/ListsPage";
@@ -18,9 +18,7 @@ const CheckLists = ({ activeCheckListCard }) => {
   useEffect(() => {
     (async () => {
       try {
-        console.log(activeCheckListCard.id);
-        const checkListsRes = await fetchCheckListsForCard(
-          activeCheckListCard.id);
+        const checkListsRes = await fetchCheckListsForCard(activeCheckListCard.id);
         setCheckLists(checkListsRes.data);
       } catch (error) {
         console.log(error);
@@ -32,11 +30,8 @@ const CheckLists = ({ activeCheckListCard }) => {
     event.preventDefault();
     try {
       setIsLoading(true);
-      const listCreatedRes = await createListInCard(
-        activeCheckListCard.id,
-        newListName);
+      const listCreatedRes = await createListInCard(activeCheckListCard.id,newListName);
       setCheckLists([...checkLists, listCreatedRes.data]);
-      console.log(listCreatedRes.data);
     } catch (error) {
       console.log(error);
     } finally {

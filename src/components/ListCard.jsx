@@ -10,11 +10,8 @@ import ListCardItem from "./ListCardItem";
 import {
   archivedList,
   createCardForList,
-  fetchArchivedLists,
   fetchCardsForList,
-  fetchLists,
 } from "../utils/api";
-import { useParams } from "react-router";
 import { ListsPageContext } from "../pages/ListsPage";
 
 const ListCard = ({ currCard, setActiveCheckListCard }) => {
@@ -22,7 +19,6 @@ const ListCard = ({ currCard, setActiveCheckListCard }) => {
   const [cards, setCards] = useState();
   const [newCardValue, setNewCardValue] = useState("");
   const [loading, setLoading] = useState(false);
-  const { id: boardId } = useParams();
   const { setLists, setArchivedLists,lists,archivedLists } = useContext(ListsPageContext);
 
   useEffect(() => {
@@ -68,7 +64,7 @@ const ListCard = ({ currCard, setActiveCheckListCard }) => {
 
   return (
     <div>
-      <Card sx={{ width: 345 }}>
+      <Card sx={{ width: 320 }}>
         <ListCardHeader
           listTitle={currCard.name}
           handleArchivedCard={handleArchivedCard}

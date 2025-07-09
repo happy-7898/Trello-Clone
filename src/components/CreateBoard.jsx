@@ -10,7 +10,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import Radio from "@mui/material/Radio";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { useState } from "react";
-import { createBoard, fetchBoards } from "../utils/api";
+import { createBoard } from "../utils/api";
 import { BoardsPageContext } from "../pages/BoardsPage";
 
 const CreateBoard = () => {
@@ -93,7 +93,7 @@ const CreateBoard = () => {
 
       {isOpened && (
         <div className="absolute left-0 top-0 w-full pt-6 bg-gray-500/50 h-screen flex justify-center items-start">
-          <div className="bg-gray-400 p-5 rounded-xl w-1/3 min-w-60 max-w-73">
+          <div className="bg-gray-400 p-5 rounded-xl w-1/3 min-w-60 max-w-86">
             <form onSubmit={handleSubmit}>
               <Stack spacing={2} >
                 <Input placeholder="Board Name" name="boardName" required  />

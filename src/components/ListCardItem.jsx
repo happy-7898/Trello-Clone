@@ -1,9 +1,7 @@
 import Typography from "@mui/material/Typography";
-import EditIcon from "@mui/icons-material/Edit";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import TextField from "@mui/material/TextField";
 import { useContext, useState } from "react";
 import { deleteCardInList, fetchCardsForList } from "../utils/api";
 import { ListsPageContext } from "../pages/ListsPage";

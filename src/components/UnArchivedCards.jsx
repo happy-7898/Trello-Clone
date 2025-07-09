@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import ListCard from "./ListCard";
 import CreateList from "./CreateList";
 import Box from "@mui/material/Box";

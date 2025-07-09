@@ -28,7 +28,6 @@ const CreateList = () => {
       setLoading(true);
       const res = await createListForBoard(boardId, newListName);
       const lists = await fetchLists(boardId);
-      console.log(lists);
       setLists(lists.data);
     } catch (error) {
       console.log(error);
