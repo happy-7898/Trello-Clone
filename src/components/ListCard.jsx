@@ -23,7 +23,7 @@ const ListCard = ({ currCard, setActiveCheckListCard }) => {
   const [newCardValue, setNewCardValue] = useState("");
   const [loading, setLoading] = useState(false);
   const { id: boardId } = useParams();
-  const { setLists, setArchivedLists } = useContext(ListsPageContext);
+  const { setLists, setArchivedLists,lists,archivedLists } = useContext(ListsPageContext);
 
   useEffect(() => {
     (async () => {
@@ -59,10 +59,8 @@ const ListCard = ({ currCard, setActiveCheckListCard }) => {
   async function handleArchivedCard() {
     try {
       const res = await archivedList(currCard.id);
-      const fetchListsRes = await fetchLists(boardId);
-      setLists(fetchListsRes.data);
-      const fetchArchivedListsRes = await fetchArchivedLists(boardId);
-      setArchivedLists(fetchArchivedListsRes.data);
+      setLists(lists.filter(curr=>curr.id!=currCard.id));
+      setArchivedLists([...archivedLists,res.data]);
     } catch (error) {
       console.log(error);
     }

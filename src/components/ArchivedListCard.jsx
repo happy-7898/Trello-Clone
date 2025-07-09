@@ -19,7 +19,7 @@ import { ListsPageContext } from "../pages/ListsPage";
 
 const ArchivedListCard = ({ currCard }) => {
   const [cards, setCards] = useState();
-  const { setLists, setArchivedLists } = useContext(ListsPageContext);
+  const { setLists, setArchivedLists,lists,archivedLists } = useContext(ListsPageContext);
   const { id: boardId } = useParams();
 
   useEffect(() => {
@@ -36,10 +36,8 @@ const ArchivedListCard = ({ currCard }) => {
   async function handleArchivedCard() {
     try {
       const res = await unArchivedList(currCard.id);
-      const fetchArchivedListsRes = await fetchArchivedLists(boardId);
-      setArchivedLists(fetchArchivedListsRes.data);
-      const fetchListsRes = await fetchLists(boardId);
-      setLists(fetchListsRes.data);
+      setLists([...lists,res.data]);
+      setArchivedLists(archivedLists.filter(curr=>curr.id!=currCard.id));
     } catch (error) {
       console.log(error);
     }
