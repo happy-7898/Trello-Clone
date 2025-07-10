@@ -65,8 +65,8 @@ A Trello-like task management application built using **React**, **React Router*
 
 1. **Clone the repo**
    ```bash
-   git clone git@gitlab.com:Harpreet7/trello-clone.git
-   cd trello-clone
+   git clone https://github.com/happy-7898/Trello-Clone.git
+   cd Trello-Clone
 2. **Install dependencies**
     ```bash
     npm install
