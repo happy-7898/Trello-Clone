@@ -64,6 +64,7 @@ const CheckListCard = ({ currCheckList,activeCheckListCard,setCheckLists,checkLi
   async function handleAddCheckItem(event) {
     event.preventDefault();
     try {
+      if (newItemName.length==0) return;
       setIsLoading(true);
       const itemCreatedRes=await createCheckItemInList(currCheckList.id,newItemName);
       setCheckItems([...checkItems,itemCreatedRes.data]);

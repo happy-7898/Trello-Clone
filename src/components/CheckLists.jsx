@@ -29,6 +29,7 @@ const CheckLists = ({ activeCheckListCard }) => {
   async function handleAddList(event) {
     event.preventDefault();
     try {
+      if (newListName.length==0) return;
       setIsLoading(true);
       const listCreatedRes = await createListInCard(activeCheckListCard.id,newListName);
       setCheckLists([...checkLists, listCreatedRes.data]);

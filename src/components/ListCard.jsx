@@ -34,6 +34,7 @@ const ListCard = ({ currCard, setActiveCheckListCard }) => {
 
   async function handleAddCard() {
     try {
+      if (newCardValue.length==0) return;
       setLoading(true);
       const name = newCardValue;
       const createCardRes = await createCardForList(currCard.id, name);
