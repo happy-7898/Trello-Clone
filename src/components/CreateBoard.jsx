@@ -92,7 +92,7 @@ const CreateBoard = () => {
       )}
 
       {isOpened && (
-        <div className="absolute left-0 top-0 w-full pt-6 bg-gray-500/50 h-screen flex justify-center items-start">
+        <div className="absolute left-0 top-0 w-full pt-6 bg-gray-500/50 min-h-screen h-full flex justify-center items-start">
           <div className="bg-gray-400 p-5 rounded-xl w-1/3 min-w-60 max-w-86">
             <form onSubmit={handleSubmit}>
               <Stack spacing={2} >
